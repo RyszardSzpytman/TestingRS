@@ -1,0 +1,2 @@
+# TestingRS
+Testowanie Automatyczne

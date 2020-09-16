@@ -18,7 +18,7 @@ public class MyStoreAddressSectionPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void addressSectionPage() {
+    public void addressSection() {
         searchAddFirstAddresses.click();
         searchCreateNewAddresses.click();
     }

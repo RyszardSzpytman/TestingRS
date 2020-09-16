@@ -19,7 +19,7 @@ public class MyStoreCheckAddressPage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-    public void checkAddressPage() {
+    public void checkAddress() {
         getAddress.getText();
 
         if(getAddress.isDisplayed()) {

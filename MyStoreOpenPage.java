@@ -12,10 +12,5 @@ public class MyStoreOpenPage {
         PageFactory.initElements(driver,this);
 
 
-        System.setProperty("webdriver.chrome.driver",
-                "src/main/resources/drivers/chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://prod-kurs.coderslab.pl");
     }
 }

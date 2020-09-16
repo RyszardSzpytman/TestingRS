@@ -26,7 +26,7 @@ public class MyStoreUserAddressPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void addressPage(
+    public void addAddress(
             String address, String city, String zip, String country) {
         okienkoAddress.clear();
         okienkoAddress.sendKeys(address);

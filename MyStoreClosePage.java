@@ -12,7 +12,7 @@ public class MyStoreClosePage {
         PageFactory.initElements(driver, this);
     }
 
-    public void closePage() {
+    public void pageQuit() {
 
         driver.quit();
     }

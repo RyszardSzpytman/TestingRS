@@ -1,5 +1,6 @@
 package warsztaty;
 
+import org.apache.commons.io.FileUtils;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -8,7 +9,9 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
+
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 public class zadanieWarsztatowe2 {
@@ -31,7 +34,7 @@ public class zadanieWarsztatowe2 {
     }
 
     @Test
-    public void customerAccount() throws InterruptedException {
+    public void customerAccount() throws InterruptedException, IOException {
 
         // Znajdź element logowania
         WebElement searchSignIn = driver.findElement(By.xpath(
@@ -100,10 +103,12 @@ public class zadanieWarsztatowe2 {
                 "group_1")));
         sizeSelect.selectByVisibleText("L");
 
+        Thread.sleep(2000);
+
         // Wybierz ilość sztuk 5
         WebElement clothQuantity = driver.findElement(By.xpath(
                 "//input[@name='qty']"));
-        //clothQuantity.clear();
+        clothQuantity.clear();
 
         //int 5 = Integer.parseInt(5);
 
@@ -155,12 +160,11 @@ public class zadanieWarsztatowe2 {
         buttonOrder.click();
 
         // Zrób zrzut ekranu SCREENSHOT
-        TakesScreenshot scrShot = ((TakesScreenshot)driver);
+        TakesScreenshot ts = (TakesScreenshot)driver;
+        File source = ts.getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(source, new File("./Screenshots/Screen.png"));
 
-        File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
 
-        // Zapisz zrzut ekranu
-        File DestFile = new File(".\\screenshot\\fullimage.jpg");
 
     }
 
@@ -169,7 +173,7 @@ public class zadanieWarsztatowe2 {
 
         // Zamknij przeglądarkę
 
-        //driver.quit();
+        driver.quit();
     }
 
 
